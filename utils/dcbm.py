@@ -307,22 +307,24 @@ class CBM ():
         test_path = self.embeddings_path_test
         test_path_second = self.embeddings_path_test_second
         
+        
         if train_path is not None:
-            train_data = torch.load(train_path, weights_only=False)
+            train_data = torch.load(train_path, weights_only=False, map_location=self.device)
             print(f"Train data loaded from {train_path}")
             self.data_train_raw = train_data
         if val_path is not None:
-            val_data = torch.load(val_path, weights_only=False)
+            val_data = torch.load(val_path, weights_only=False, map_location=self.device)
             print(f"Validation data loaded from {val_path}")
             self.data_val_raw = val_data
         if test_path is not None:
-            test_data = torch.load(test_path, weights_only=False)
+            test_data = torch.load(test_path, weights_only=False, map_location=self.device)
             self.data_test_raw = test_data
             print(f"Test data loaded from {test_path}")
         if test_path_second is not None:
-            test_data_second = torch.load(test_path_second, weights_only=False)
+            test_data_second = torch.load(test_path_second, weights_only=False, map_location=self.device)
             self.data_test_second_raw = test_data_second
             print(f"Second Test data loaded from {test_path_second}")
+            
             
     def extract_data_labels(self):
         #print("Extracting data and labels...")
