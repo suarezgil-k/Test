@@ -80,14 +80,12 @@ python experiments/dcbm_testing.py
 
 1. `classes/`  
    Contains class information for the dataset (required for new datasets).
-2. `Concepts/`  
-   Directory to store previously extracted concepts.
-3. `Datasets/`  
+2. `Datasets/`  
    Contains the training, testing, and validation datasets.
-4. `Embeddings/`  
+3. `Embeddings/`  
    - Subset of embeddings (if not segmenting all training images).
    - Embedded files for test, validation, and training sets.
-5. `Segments/`  
+4. `Segments/`  
    - Contains segmented images.
    - Includes embeddings in the `Seg_embs/` subdirectory.
 
