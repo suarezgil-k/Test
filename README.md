@@ -73,7 +73,7 @@ python data/Datasets/scripts/embed_CLIP.py
 With all necessary files correctly stored in the `data` directory, initiate DCBM training:
 
 ```bash
-python dcbm_training/dcbm_testing.py
+python experiments/dcbm_testing.py
 ```
 
 **Necessary Files in `data/`:**
