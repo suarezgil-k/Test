@@ -41,7 +41,7 @@ python scripts/create_segments_SAM2.py --dataset cifar100 --device cuda:0
 Embed the segments into the selected embedding space by running the corresponding script in the `Segments` folder. We primarily report on CLIP models [RN-50, ViT-B16, ViT-L14] and save embeddings to reuse in DCBM training for efficiency.
 
 ```bash
-python scripts/emb_segments_CLIP.py --dataset cifar100 --device cuda:0 --emb CLIP-RN50 --seg_method SAM2
+python scripts/emb_segments_CLIP.py --dataset cifar100 --device cuda:0 --emb CLIP-RN50 --seg_model SAM2
 ```
 
 ---
@@ -88,6 +88,7 @@ python experiments/dcbm_testing.py
 4. `Segments/`  
    - Contains segmented images.
    - Includes embeddings in the `Seg_embs/` subdirectory.
+   - Includes detection/segmentation statistics in the `stats/` subdirectory.
 
 We also provide multiple Jupyter notebooks in `dcbm_training/` to facilitate training and hyperparameter tuning.
 
@@ -103,6 +104,7 @@ Explore interactive explanations with DCBM across different datasets using the J
 
 ## Installation
 
+We recommend create a conda environment with `Python=3.11`. 
 Install the required dependencies using the provided `requirements.txt` file:
 
 ```bash
@@ -123,7 +125,6 @@ The repository is structured as follows:
 ├── dcbm_training/
 ├── data/
 │   ├── classes/
-│   ├── Concepts/
 │   ├── Datasets/
 │   ├── Embeddings/
 │   ├── Segments/
@@ -142,7 +143,7 @@ The repository is structured as follows:
 - `utils/`: Helper scripts for running experiments.
 - `interpretation/`: Tools for visualizing DCBM explanations.
 
-**Important:** Some folders in the `data/` directory may be empty. Due to size limitations, we couldn't upload the complete dataset and corresponding concepts. Therefore, these folders lack content.
+**Important:** Some folders in the `data/` directory may be empty. Due to size limitations, we couldn't upload the complete dataset and corresponding concepts. We uploaded the empty structure to ensure all scripts run smoothly.
 
 To run the scripts correctly, please add the required datasets before execution.
 
